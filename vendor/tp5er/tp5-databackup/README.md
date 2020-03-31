@@ -1,4 +1,16 @@
 
+### Packagist 镜像使用方法
+方法一： 修改 composer 的全局配置文件（推荐方式）
+~~~
+composer config -g repo.packagist composer https://packagist.phpcomposer.com
+~~~
+方法二： 修改当前项目的 composer.json 配置文件：
+
+~~~
+composer config repo.packagist composer https://packagist.phpcomposer.com
+~~~
+
+
 ### 使用composer进行安装
 ~~~
     composer require tp5er/tp5-databackup
@@ -62,7 +74,7 @@ return $this->fetch('index',['list'=>$db->dataList()]);
 ~~~
  $tables="数据库表1";
  $start= $db->setFile($file)->backup($tables[$id], 0);
- 当$start返回0的时候就表示备份成功
+
 ~~~
 
 ### 导入表
