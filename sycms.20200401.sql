@@ -1624,7 +1624,7 @@ CREATE TABLE `tp_hooks` (
   `status` tinyint unsigned NOT NULL DEFAULT '1' COMMENT '状态',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='钩子列表';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='钩子列表';
 
 -- ----------------------------
 -- Records of tp_hooks
