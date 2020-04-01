@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <meta charset="utf-8" /> 
+    <title>{$title}_{$system.name}</title>
+    <meta name="keywords" content="{$keywords}" />
+    <meta name="description" content="{$description}" />
+    {include file="common/css"/}
+    <script language="javascript" src="{$public}js/aiting2.js"></script>
+</head>
+
+<body>
+    {include file="common/header"/} 
+    <div class="main">
+        <div class="main_left left">
+            <div class="list">
+                <div class="list-location">
+                    <div class="lin_o">
+                        <a href="/">首页</a>
+                        {tp:position name='v'}
+                         > <a href="{$v.url}">{$v.catname}</a>
+                        {/tp:position}
+                    </div>
+                </div>
+            </div>
+            <div class="cd-tabs">
+                <div class="tab">
+                    <nav>
+                        <ul class="cd-tabs-navigation">
+                            <li><a data-content="box1" href="javascript:;" class="select">最近更新</a></li>
+                            <li><a data-content="box2" href="javascript:;">星级推荐</a></li>
+                            <li><a data-content="box3" href="javascript:;">热门浏览</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <ul class="cd-tabs-content">
+                    <li data-content="box1" class="selected cd-tabs-li">
+                        <div class="main_6">
+                            <ul id="js-news-list">
+                                {tp:list name="list"}
+                                <li>
+                                    <h3><a href="{$list.url}" target="_blank">{$list.title}</a></h3>
+                                    <div class="text">
+                                        {if $list.image}
+                                        <a href="{$list.url}" target="_blank" title="{$list.title}">
+                                            <img class="left" src="{$list.image}" alt="{$list.title}"/>
+                                        </a>
+                                        {/if}
+                                        <p><a href="{$list.url}" target="_blank" title="{$list.title}">{$list.summary}</a></p>
+                                    </div>
+                                    <span class="time left">{$list.create_time|date="Y-m-d"}</span> 
+                                    <span class="right"><a href="javascript:;">分享</a></span>
+                                    <i class="right">|</i>
+                                    <span class="right"><a href="javascript:;">评论</a></span>
+                                </li>
+                                {/tp:list}
+                            </ul>
+                        </div>
+                    </li>
+                    <li data-content="box2" class="cd-tabs-li">
+                        <div class="main_6">
+                            <ul>
+                                {tp:list name="list" limit="10" where="star > 0"}
+                                <li>
+                                    <h3><a href="{$list.url}" target="_blank">{$list.title}</a></h3>
+                                    <div class="text">
+                                        {if $list.image}
+                                        <a href="{$list.url}" target="_blank" title="{$list.title}">
+                                            <img class="left" src="{$list.image}" alt="{$list.title}"/>
+                                        </a>
+                                        {/if}
+                                        <p><a href="{$list.url}" target="_blank" title="{$list.title}">{$list.summary}</a></p>
+                                    </div>
+                                    <span class="time left">{$list.create_time|date="Y-m-d"}</span> 
+                                    <span class="right"><a href="javascript:;">分享</a></span>
+                                    <i class="right">|</i>
+                                    <span class="right"><a href="javascript:;">评论</a></span>
+                                </li>
+                                {/tp:list}
+                            </ul>
+                        </div>
+                    </li>
+                    <li data-content="box3" class="cd-tabs-li">
+                        <div class="article_box">
+                            <ul>
+                                {tp:list name="list"}
+                                <li>
+                                    <a href="{$list.url}" title="{$list.title}">
+                                        <img src="{$list.image}" width="130px" alt="{$list.title}">
+                                    </a>
+                                    <strong class="figure_title figure_title_two_row">
+                                        <a href="{$list.url}" title="{$list.title}">{$list.title}</a>
+                                    </strong>
+                                </li>
+                                {/tp:list}
+                            </ul>
+                            <div class="clear"></div>
+                            <div class="page_div">{$page|raw}</div>
+                            <div class="clear"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="page_div">{$page|raw}</div>
+        </div>
+       
+        <div class="right">
+            <div class="main_5">
+                <div class="title">星闻播报</div>
+                {include file="common/xwbb"}
+            </div>
+            <div class="main_8">
+                <div class="title">相关文章</div>
+                {tp:list row="10"}
+                <li><a href="{$list.url}" target="_blank" title="{$list.title}">{$list.title}</a></li>
+                {/tp:list}
+            </div>
+            <div class="gg3"><script language="javascript">right01();</script></div>
+            <div class="main_10">
+                <div class="title">阅读排行榜</div>
+                {include file="common/ydphb"}
+            </div>
+            <div class="main_5">
+                <div class="title">劲爆视频</div>
+                {include file="common/jbsp"}
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    {include file="common/footer"/}
+</body>
+</html>

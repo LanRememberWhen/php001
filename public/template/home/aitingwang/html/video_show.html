@@ -24,21 +24,32 @@
             </div>
             <div class="article_div">
                 <h3>{$info.title}</h3>
-                <div class="bq">
-                    <span>时间：{$info.create_time|date="Y-m-d H:i"}</span>
-                    <span>编辑：{$info.author}</span>
-                    <span>来源：{$info.source}</span>
-                </div>
                 <div class="abody">
-                    <em>
-                        <b>[导读]</b>
-                        {$info.summary}
-                    </em>
                     <div class="bds_l">
                         <script language="javascript">Cleft_1();</script>
                     </div>
                     <div class="bds_r"><script language="javascript">Cleft_2();</script></div>
-                    {$info.content|raw}
+                    <div class="video_box">
+                        {if $info.web_type == 'qq' && $info.web_id != ''}
+                        <iframe width="100%" height="500" frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid={$info.web_id}" allowFullScreen="true"></iframe>
+                        {/if}
+                    </div>
+                    <style>
+                        .video_info {height: 90px;background-color: #efefef;padding: 10px;margin-bottom: 15px;}
+                        .video_img {width: 160px;height: 90px;float: left;}
+                        .video_text {float: left;}
+                        .video_text span {display: block;font-size: 14px;padding-left: 10px;}
+                    </style>
+                    <div class="video_info">
+                        <div class="video_img">
+                            <img src="{$info.image}" alt="{$info.title}">
+                        </div>
+                        <div class="video_text">
+                            <span>时间：{$info.create_time|date="Y-m-d"}</span>
+                            <span>来源：{$info.source}</span>
+                            <span>简介：{$info.summary}</span>
+                        </div>
+                    </div>
                 </div>
                 <div style="clear:both"></div>
                 <div class="cad">
@@ -49,8 +60,25 @@
                 </div>
             </div>
             <div class="article_box">
+                <style>
+                    .article_box ul li {height: 155px;}
+                    .article_box ul li a {margin: 0;}
+                    .article_box ul li strong {line-height: 20px;max-height: 40px;height: auto;width: 100%;display: block;overflow: hidden;}
+                    .article_box ul li strong a {line-height: 20px;font-size: 14px;font-weight: normal;word-wrap: break-word;display: -webkit-box;overflow: hidden;white-space: normal;word-break: break-all;text-overflow: inherit;margin-top: 0;text-align: unset;}
+                </style>
                 <div class="title">影视聚焦</div>
-                {include file="common/ysjj"}
+                <ul>
+                    {tp:list row="10" limit="12"}
+                    <li>
+                        <a href="{$list.url}" title="{$list.title}">
+                            <img src="{$list.image}" alt="{$list.title}">
+                        </a>
+                        <strong>
+                            <a href="{$list.url}" title="{$list.title}">{$list.title}</a>
+                        </strong>
+                    </li>
+                    {/tp:list}
+                </ul>
                 <div class="clear"></div>
                 <div class="left ysad"><script language="javascript">yuansheng();</script></div>
                 <div class="clear"></div>
@@ -63,14 +91,26 @@
         </div>
         <div class="right">
             <div class="main_5">
-                <div class="title">星闻播报</div>
-                {include file="common/xwbb"}
-            </div>
-            <div class="main_8">
-                <div class="title">相关文章</div>
-                {tp:list row="10"}
-                <li><a href="{$list.url}" target="_blank" title="{$list.title}">{$list.title}</a></li>
-                {/tp:list}
+                <style>
+                    .title {margin-bottom: 5px;}
+                    .main_5 ul li {margin-right: 10px;height: 135px;}
+                    .main_5 ul li a {width: 145px;}
+                    .main_5 ul li strong {line-height: 20px;max-height: 40px;height: auto;width: 100%;display: block;overflow: hidden;}
+                    .main_5 ul li strong a {line-height: 20px;font-size: 14px;font-weight: normal;word-wrap: break-word;display: -webkit-box;overflow: hidden;white-space: normal;word-break: break-all;text-overflow: inherit;}
+                </style>
+                <div class="title">相关视频</div>
+                <ul>
+                    {tp:list row="10" limit="10"}
+                    <li>
+                        <a href="{$list.url}" title="{$list.title}">
+                            <img src="{$list.image}" alt="{$list.title}">
+                        </a>
+                        <strong>
+                            <a href="{$list.url}" title="{$list.title}">{$list.title}</a>
+                        </strong>
+                    </li>
+                    {/tp:list}
+                </ul>
             </div>
             <div class="gg3"><script language="javascript">right01();</script></div>
             <div class="main_10">
