@@ -66,9 +66,9 @@
                     .article_box ul li strong {line-height: 20px;max-height: 40px;height: auto;width: 100%;display: block;overflow: hidden;}
                     .article_box ul li strong a {line-height: 20px;font-size: 14px;font-weight: normal;word-wrap: break-word;display: -webkit-box;overflow: hidden;white-space: normal;word-break: break-all;text-overflow: inherit;margin-top: 0;text-align: unset;}
                 </style>
-                <div class="title">影视聚焦</div>
+                <div class="title">热门推荐</div>
                 <ul>
-                    {tp:list row="10" limit="12"}
+                    {tp:list row="10" limit="12" where="star > 0"}
                     <li>
                         <a href="{$list.url}" title="{$list.title}">
                             <img src="{$list.image}" alt="{$list.title}">
