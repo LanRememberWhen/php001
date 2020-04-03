@@ -1,0 +1,113 @@
+.main_mod {
+    width: 300px;
+    overflow: hidden;
+}
+.ranking-list {
+    min-height: 300px;
+}
+.ranking-list dl {
+    padding: 0 0 8px 116px;overflow: hidden;
+}
+.ranking-list dt {
+    position: relative;
+    float: left;
+    width: 106px;
+    height: 60px;
+    margin-left: -116px;
+    overflow: hidden;
+    background-color: #ececec;
+}
+
+.ranking-list .s-rank {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 16px;
+    height: 16px;
+    font: 12px/16px Verdana;
+    text-align: center;
+    color: #fff;
+    background-color: #bfc7cd;
+}
+
+.ranking-list dt .s-rank {
+    background-color: #e7424a;
+}
+
+.ranking-list .s-cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    -webkit-transform: matrix(1,0,0,1,0,0);
+    transform: matrix(1,0,0,1,0,0);
+    -webkit-transition: -webkit-transform .6s;
+    transition: -webkit-transform .6s;
+    transition: transform .6s;
+    transition: transform .6s,-webkit-transform .6s;
+}
+
+.ranking-list dd {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.main_mod .s-title, .main_mod em.s-author {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.main_mod .s-title {
+    font-size: 14px;
+}
+
+.main_mod .ranking-list dd .s-title {
+    padding-top: 6px;
+    height: 32px;
+    line-height: 16px;
+}
+
+.s-title a {
+    color: #333;
+}
+
+.ranking-list em {
+    font-size: 12px;
+}
+
+.ranking-list em.s-live, .ranking-list em.s-view {
+    position: relative;
+    float: left;
+    padding-left: 16px;
+}
+
+.ranking-list dd .s-live {
+    margin-top: 4px;
+}
+
+.ranking-list dl {
+    padding: 0 0 8px 116px;
+    overflow: hidden;
+}
+
+.main_mod .ranking-list dl.s-general {
+    padding: 4px 0;
+}
+
+.main_mod .ranking-list dl.s-general dd {
+    padding: 0 0 0 24px;
+}
+
+.main_mod .ranking-list dl.s-general dd .s-title {
+    height: 16px;
+    padding-top: 0;
+    white-space: nowrap;
+}

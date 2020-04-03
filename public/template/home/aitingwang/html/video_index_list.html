@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <meta charset="utf-8" /> 
+    <title>{$title}_{$system.name}</title>
+    <meta name="keywords" content="{$keywords}" />
+    <meta name="description" content="{$description}" />
+    {include file="common/css"/}
+    <script language="javascript" src="{$public}js/aiting2.js"></script>
+</head>
+
+<body>
+    {include file="common/header"/} 
+    <div class="main">
+        <div class="list">
+            <div class="list-location">
+                <div class="lin_o">
+                    <a href="/">首页</a>
+                    {tp:position name='v'}
+                        > <a href="{$v.url}">{$v.catname}</a>
+                    {/tp:position}
+                </div>
+            </div>
+        </div>
+        <div class="gg2"><script language="javascript"></script></div>
+        {tp:nav name='nav' id="$cate['id']"}
+        <div class="left article">
+            <div class="article_box">
+                <style>
+                    .title {margin-bottom: 0;margin-right: 10px;}
+                    .right .title {margin-right: 0;}
+                    .article_box ul li {height: 155px;margin-bottom: 10px;}
+                    .article_box ul li a {margin: 0;}
+                    .article_box ul li strong {line-height: 20px;max-height: 40px;height: auto;width: 100%;display: block;overflow: hidden;}
+                    .article_box ul li strong a {line-height: 20px;font-size: 14px;font-weight: normal;word-wrap: break-word;display: -webkit-box;overflow: hidden;white-space: normal;word-break: break-all;text-overflow: inherit;margin-top: 0;text-align: unset;}
+                    .title_more {font-size: 18px;font-weight: normal;line-height: 36px;color: #e94d02 !important;}
+                </style>
+                <div class="title">
+                    {$nav.catname}
+                    <a href="{$nav.url}" class="right title_more">更多 &gt;&gt; </a>
+                </div>
+                <ul>
+                    {tp:list id="$nav['id']" name="list" limit="8" where="image <> ''"}
+                    <li>
+                        <a href="{$list.url}" target="_blank" title="{$list.title}">
+                            <img src="{$list.image}" width="130px" alt="{$list.title}"/>
+                        </a>
+                        <strong>
+                            <a href="{$list.url}" target="_blank" title="{$list.title}">
+                                {$list.title}
+                            </a>
+                        </strong>
+                    </li>
+                    {/tp:list}
+                </ul>
+                <div class="clear"></div>
+                <div class="left ysad"><script language="javascript">yuansheng();</script></div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="right">
+            <div class="main_mod">
+                <div class="title">排行榜</div>
+                <div class="ranking-list">
+                    {tp:list id="$nav['id']" name="list" limit="8" order="hits DESC"}
+                    {if $key < 3}
+                    <dl>
+                        <dt>
+                            <em class="s-rank">{$key+1}</em> 
+                            <div class="s-cover" style="background-image: url(&quot;{$list.image}&quot;);"></div>
+                        </dt> 
+                        <dd>
+                            <div class="s-title">
+                                <a href="{$list.url}" title="{$list.title}">{$list.title}</a>
+                            </div> 
+                            <em class="s-live">{$list.hits}</em>
+                        </dd>
+                    </dl>
+                    {else}
+                    <dl class="s-general">
+                        <dd>
+                            <em class="s-rank">{$key+1}</em> 
+                            <div class="s-title">
+                                <a href="{$list.url}" title="{$list.title}">{$list.title}</a>
+                            </div>
+                        </dd>
+                    </dl>
+                    {/if}
+                    {/tp:list}
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        {/tp:nav}
+        <div class="clear"></div>
+    </div>
+    {include file="common/footer"/}
+</body>
+</html>

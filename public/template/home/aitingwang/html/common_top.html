@@ -1,0 +1,27 @@
+<div class="topnav">
+    <div class="topnav_main">
+        <div class="left">
+            <a href="/">首页</a>
+            <a href="/bjjt/" target="_blank">百家讲坛</a>
+            <a href="/kbxh/" target="_blank">恐怖悬疑</a>
+            <a href="/lsjs/" target="_blank">历史军事</a>
+            <a href="/wxxs/"target="_blank">武侠</a>
+            <a href="/dyly/" target="_blank">言情</a>
+            <a href="/SiteMap/Article1.htm" target="_blank">最新文章</a>
+        </div>
+        {if $system.member}
+        <div class="right">
+            <img class="left" src="{$public}images/img.jpg" />
+            {if $Think.session.user.email}
+            <a href="{:url('user/index')}">用户中心</a>
+            <a href="{:url('user/logout')}">退出</a>
+            {else}
+            <span class="main_nav">
+                <a class="cd-signin" href="#0">登录</a>
+                <a class="cd-signup" href="#0">注册</a>
+            </span>
+            {/if}
+        </div>
+        {/if}
+    </div>
+</div>

@@ -35,8 +35,8 @@ i{font-style:normal;}
 .topnav_main a{color:#333; line-height:32px; display:block; margin:0 8px; float:left;font-size:14px;}
 .topnav_main img{width:18px; height:18px; vertical-align:middle; margin-top:8px;}
 
-.logo_search_bg{width:1000px; margin:10px auto 0 auto;}
-.logo{background:url(../images/logo.jpg) center center no-repeat; width:275px; height:55px; float:left; margin-top:5px;}
+.logo_search_bg{width:1000px; margin: 0 auto;}
+.logo{background:url(../images/logo.png) center center no-repeat; width:275px; height:55px; float:left; margin-top:5px;}
 
 .logo_search .search{ padding:1px 2px; height:30px; float:right; margin-top:15px; position:relative; *width:258px;}
 .logo_search .search a{ color:#575757; }
@@ -168,7 +168,7 @@ i{font-style:normal;}
 
 .footer{ background-color:#f8f8f8; border-top:solid 1px #dddddd; margin-top:15px;}
 .ft{width:1000px; margin:0 auto;}
-.ft_logo{background:url(../images/fr_logo.jpg) center  35px no-repeat; width:235px; height:130px; float:left;}
+.ft_logo{background:url(../images/fr_logo.png) center  35px no-repeat; width:235px; height:130px; float:left;}
 .fl{float:left;border-left:#ddd solid 1px;}
 .fr_list{font-size:14px; color:#888; float:left; margin:25px 0px 25px 40px;}
 .fr_list b{display:block; margin-bottom:10px;}
