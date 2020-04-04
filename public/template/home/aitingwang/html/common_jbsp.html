@@ -1,5 +1,5 @@
 <ul>
-    {tp:list row="10" limit="4" where="image <> '' and star = 5"}
+    {tp:list row="10" limit="4" where="image <> '' and star > 0"}
     <li>
         <a href="{$list.url}" title="{$list.title}">
             <img src="{$list.image}" alt="{$list.title}">

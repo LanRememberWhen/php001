@@ -38,19 +38,23 @@
                             <ul id="js-news-list">
                                 {tp:list name="list"}
                                 <li>
-                                    <h3><a href="{$list.url}" target="_blank">{$list.title}</a></h3>
                                     <div class="text">
                                         {if $list.image}
                                         <a href="{$list.url}" target="_blank" title="{$list.title}">
                                             <img class="left" src="{$list.image}" alt="{$list.title}"/>
                                         </a>
                                         {/if}
-                                        <p><a href="{$list.url}" target="_blank" title="{$list.title}">{$list.summary}</a></p>
+                                        <p>
+                                            <a href="{$list.url}" target="_blank" title="{$list.title}">{$list.title}</a>
+                                        </p>
+                                        <div class="feed-block-describe">{$list.summary}</div>
+                                        <div class="z-feed-foot">
+                                            <span class="time left">{$list.create_time|date="Y-m-d"}</span> 
+                                            <span class="right"><a href="javascript:;">分享</a></span>
+                                            <i class="right">|</i>
+                                            <span class="right"><a href="javascript:;">评论</a></span>
+                                        </div>
                                     </div>
-                                    <span class="time left">{$list.create_time|date="Y-m-d"}</span> 
-                                    <span class="right"><a href="javascript:;">分享</a></span>
-                                    <i class="right">|</i>
-                                    <span class="right"><a href="javascript:;">评论</a></span>
                                 </li>
                                 {/tp:list}
                             </ul>
@@ -61,35 +65,50 @@
                             <ul>
                                 {tp:list name="list" limit="10" where="star > 0"}
                                 <li>
-                                    <h3><a href="{$list.url}" target="_blank">{$list.title}</a></h3>
                                     <div class="text">
                                         {if $list.image}
                                         <a href="{$list.url}" target="_blank" title="{$list.title}">
                                             <img class="left" src="{$list.image}" alt="{$list.title}"/>
                                         </a>
                                         {/if}
-                                        <p><a href="{$list.url}" target="_blank" title="{$list.title}">{$list.summary}</a></p>
+                                        <p>
+                                            <a href="{$list.url}" target="_blank" title="{$list.title}">{$list.title}</a>
+                                        </p>
+                                        <div class="feed-block-describe">{$list.summary}</div>
+                                        <div class="z-feed-foot">
+                                            <span class="time left">{$list.create_time|date="Y-m-d"}</span> 
+                                            <span class="right"><a href="javascript:;">分享</a></span>
+                                            <i class="right">|</i>
+                                            <span class="right"><a href="javascript:;">评论</a></span>
+                                        </div>
                                     </div>
-                                    <span class="time left">{$list.create_time|date="Y-m-d"}</span> 
-                                    <span class="right"><a href="javascript:;">分享</a></span>
-                                    <i class="right">|</i>
-                                    <span class="right"><a href="javascript:;">评论</a></span>
                                 </li>
                                 {/tp:list}
                             </ul>
                         </div>
                     </li>
                     <li data-content="box3" class="cd-tabs-li">
-                        <div class="article_box">
+                        <div class="main_6">
                             <ul>
-                                {tp:list name="list"}
+                                {tp:list name="list" order="hits DESC"}
                                 <li>
-                                    <a href="{$list.url}" title="{$list.title}">
-                                        <img src="{$list.image}" width="130px" alt="{$list.title}">
-                                    </a>
-                                    <strong class="figure_title figure_title_two_row">
-                                        <a href="{$list.url}" title="{$list.title}">{$list.title}</a>
-                                    </strong>
+                                    <div class="text">
+                                        {if $list.image}
+                                        <a href="{$list.url}" target="_blank" title="{$list.title}">
+                                            <img class="left" src="{$list.image}" alt="{$list.title}"/>
+                                        </a>
+                                        {/if}
+                                        <p>
+                                            <a href="{$list.url}" target="_blank" title="{$list.title}">{$list.title}</a>
+                                        </p>
+                                        <div class="feed-block-describe">{$list.summary}</div>
+                                        <div class="z-feed-foot">
+                                            <span class="time left">{$list.create_time|date="Y-m-d"}</span> 
+                                            <span class="right"><a href="javascript:;">分享</a></span>
+                                            <i class="right">|</i>
+                                            <span class="right"><a href="javascript:;">评论</a></span>
+                                        </div>
+                                    </div>
                                 </li>
                                 {/tp:list}
                             </ul>
@@ -116,7 +135,7 @@
             </div>
             <div class="gg3"><script language="javascript">right01();</script></div>
             <div class="main_10">
-                <div class="title">阅读排行榜</div>
+                <div class="title">热门阅读</div>
                 {include file="common/ydphb"}
             </div>
             <div class="main_5">
