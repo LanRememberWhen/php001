@@ -7,4 +7,5 @@ return [
     'game$' => 'home/game/index?catId=26',
     'game/pubg' => 'home/pubg/index?catId=27',
     'game/wzry' => 'home/wzry/index?catId=28',
+    'game/yxlm' => 'home/yxlm/index?catId=29',
 ];
